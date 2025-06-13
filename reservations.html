@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kaysville Portraits :: Reservations</title>
+        <meta charset="UTF-8">
+        <link href="competency.css" rel="stylesheet">
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+        </style>
+    </head>
+<body>
+    <div class="wrapper">  
+    <header>
+            <h1 class="platypi-justin">Kaysville Portraits</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>&nbsp;
+            <a href="reservations.html">Reservations</a>&nbsp;
+            <a href="pricing.html">Pricing</a>&nbsp;
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+        <main id="main-pricing">
+
+            <h3 class="platypi-justin">Reservations</h3>
+            <p>Type your information into the following form and press submit to schedule an appointment.</p>
+
+            
+            <form method="post" action="https://webdevbasics.net/scripts/demo.php">
+                <label for="myFName">* First Name:</label>
+                <input type="text" name="myFName" id="myFName" required="required">
+                <label for="myLName">* Last Name:</label>
+                <input type="text" name="myLName" id="myLName" required="required">
+                <label for="myEMail">* E-mail Address:</label>
+                <input type="email" name="myEMail" id="myEMail" required="required">
+                <label for="myPhone">&nbsp;&nbsp;Phone Number:</label>
+                <input type="tel" name="myPhone" id="myPhone" maxlength="12">
+                <label for="myADate">* Date & Time:</label>
+                <input type="datetime-local" name="myADate" id="myADate" required="required">
+                <label for="in-house">* In-house</label>
+                <input type="radio" name="myPlace" id="in-house" value = "in-house" required="required">
+                <label for="at-site">&nbsp;&nbsp;At site</label>
+                <input type="radio" name="myPlace" id="at-site" value="at-site" required="required">
+                <datalist id = "place">
+                    <option value="In-House"></option>
+                    <option value="At Site"></option>
+                </datalist>
+                <label for="myType">* Reservation Type:</label>
+                <input type="text" name="myType" id="myType" required="required" list = "type">
+                <datalist id = "type">
+                    <option value="Single portrait"></option>
+                    <option value="Couples portrait"></option>
+                    <option value="Family portrait"></option>
+                </datalist>
+                <label for="numPeople">&nbsp;&nbsp;Additional People:</label>
+                <input type="number" name="numPeople" id="numPeople" min ="0" max="5">
+                <label for="numBackdrops">&nbsp;&nbsp;Backdrops/Settings:</label>
+                <input type="number" name="numBackdrops" id="numBackdrops" min ="0" max="5">
+                <label for="myComments">&nbsp;&nbsp;Comments:</label>
+                <textarea name="myComments" id="myComments" rows="2" cols="30"></textarea>
+                <input type="submit">
+            </form>
+            <p>Required fields are marked with an asterisk *</p>
+            <div class="centered"><br>
+                Kaysville Portraits<br>
+                1638 south 300 east<br>
+                Kaysville, UT 84037<br>
+                <br>
+                <a href="tel:385-306-9320">(385) 306-9320</a> <br>
+                <br>
+            </div>
+        
+        </main>
+        <footer class="centered">
+            <small><i>
+                Copyright &copy; Kaysville Portraits<br>
+                <a href="mailto:info@KaysvillePortraits.com">info@KaysvillePortraits.com</a>
+            </i></small>
+        </footer>
+    </div>
+    <script src="../dist/js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

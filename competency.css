@@ -1,0 +1,207 @@
+.wrapper {
+    background: lightgoldenrodyellow;
+    width: 80%;
+    max-width: 1100px;
+    min-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wrapper-reservations {
+    background: white;
+    width: 80%;
+    max-width: 1100px;
+    min-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+    background-image: linear-gradient(to bottom, darkgray, #FFFFFF);
+    background-repeat: no-repeat;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0
+}
+header {
+    background-color: rgb(241, 242, 244);
+    color: rgb(69,71,56);
+    background-image: url(camera.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-top: 3px;
+    text-indent: 1em;
+}
+#header-reservations {
+    position:fixed;
+    width: 80%;
+    max-width: 1100px;
+    min-width: 450px;
+}
+nav {
+    background-color: rgb(241, 242, 244);
+    font-weight: bold;
+    padding-top: 1em;
+    padding-bottom: 6px;
+    border-bottom: 2px solid black;
+    text-indent: 1em;
+}
+#nav-reservations {
+    position:fixed;
+    top: 4.2em;
+    width: 80%;
+    max-width: 1100px;
+    min-width: 450px;
+
+}
+nav a {
+    text-decoration: none; /*This makes no underlines on nav hyperlinks*/
+    transition:color 4s linear;
+}
+a:hover {
+    color: #13bcd3;
+}
+nav a:hover {
+    transition-property: color;
+    transition-duration: 0s;
+    transition-timing-function: linear;
+}
+h1 {
+    margin-bottom: 0;
+}
+h2 {
+    color: rgb(69,71,56);
+}
+h3 {
+    color: rgb(69,71,56);
+}
+ul{
+    list-style-image: url(camera-bullet.jpg);
+}
+footer {
+    font-size: 75%;
+    font-style: italic;
+    background-color: rgb(241, 242, 244);
+}
+.centered {
+    text-align: center;
+}
+.platypi-justin {
+    font-family: "Platypi", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+#side-bar {/*for the Index page*/
+    background-color: rgb(241, 242, 244);
+    float: right;
+    width: 240px;
+    margin-right: 20px;
+    padding-left: 20px;
+}
+#main-area {/*for the Index page*/
+    margin-left: 20px;
+}
+.clear-it {/*for the Index page*/
+    clear: right;
+}
+#side-bar img {/*for the Index page*/
+    filter: grayscale(100%);/*makes images black and white*/
+}
+/*for the Index page*/
+@media (max-width: 900px) {
+    #img1 {
+        display: none;
+    }
+    #img2 {
+        display: none;
+    }
+    #img3 {
+        display: none;
+    }
+}
+@media (max-width: 1150px) {
+    #img2 {
+        display: none;
+    }
+    #img3 {
+        display: none;
+    }
+}
+@media (max-width: 1400px) {
+    #img3 {
+        display: none;
+    }
+}
+@media (max-width: 2000px) {
+    /*#img3 {
+        display: none;
+    }*/
+}
+picture {/*This is for the Portfolio*/
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+
+}
+#gallery {/*This is for the Portfolio*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: url(bkgrnd.jpg) repeat-y left top, url(bkgrnd.jpg) repeat-y right top;
+}
+#gallery img {/*This is for the Portfolio*/
+    margin: 1em;
+    box-shadow:5px 5px 5px #777;
+}
+figcaption {/*This is for the Portfolio*/
+    color: Black;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 2px #777;
+}
+#contact {/*This is for the Portfolio*/
+    padding-left: 30px;
+    padding-right: 30px;
+    background: url(bkgrnd.jpg) repeat-y left, url(bkgrnd.jpg) repeat-y right;
+}
+/*Reservations page*/
+label {
+    float: left;
+    display: block;
+    text-align: left;
+    width: 160px;
+    padding-right: 5px;
+}
+input, textarea {
+    display: block;
+    margin-bottom: 20px;
+}
+input[type="submit"] {
+    margin-left: 165px;
+}
+/*pricing page*/
+#main-pricing {
+    margin: 1em;
+}
+table {
+    border: 2px solid rgb(69,71,56);
+    border-collapse: collapse;
+    width: 75%;
+    margin: auto;
+    background-color: rgb(241, 242, 244);
+}
+td, th {
+    padding: .5em;
+    border: 2px solid rgb(69,71,56);
+}
+th {
+    color: rgb(241, 242, 244);
+    background-color: rgb(69,71,56);
+}
+.text {
+    text-align: left;
+}
+tr:nth-of-type(odd) {
+    background-color: lightgray;
+}
