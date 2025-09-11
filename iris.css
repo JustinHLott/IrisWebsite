@@ -31,10 +31,12 @@ nav {
     padding-bottom: 6px;
     border-bottom: 2px solid black;
     text-indent: 1em;
+    font-size: inherit;
 }
 nav a {
     text-decoration: none; /*This makes no underlines on nav hyperlinks*/
     transition:color 4s linear;
+    font-size: inherit;
 }
 a:hover {
     color: #13bcd3;
@@ -75,6 +77,7 @@ footer {
     width: 240px;
     margin-right: 20px;
     padding-left: 20px;
+    font-size: inherit;
 }
 #main-area {/*for the Index page*/
     margin-left: 20px;
