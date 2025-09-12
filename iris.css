@@ -21,7 +21,7 @@ header {
     background-repeat: no-repeat;
     background-position: right;
     padding-top: 3px;
-    text-indent: 2em;
+    text-indent: 1em;
 }
 
 nav {
@@ -43,11 +43,8 @@ nav a {
   nav a {
     font-size: 1.3em;  /* adjust to what looks good */
   }
-  #side-bar p{/*for the Index page*/
-    font-size: 1.3em;
-  }
-  #side-bar h4{/*for the Index page*/
-    font-size: 1.3em;
+  #side-bar h3, #side-bar h4, #side-bar p{/*for the Index page*/
+    font-size: 2em;
   }
   .wrapper {
     width: 100%;
@@ -74,8 +71,10 @@ nav a:hover {
     transition-duration: 0s;
     transition-timing-function: linear;
 }
-h1 {
-    margin-bottom: 0;
+.theHeader {
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }
 h2 {
     color: rgb(69,71,56);
