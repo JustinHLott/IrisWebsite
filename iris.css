@@ -59,7 +59,7 @@ nav a {
     font-size: 1.3em;
   }
   #gallery figure figcaption{
-    font-size: 2.3em;
+    font-size: 1.3em;
   }
 }
 a:hover {
@@ -170,12 +170,6 @@ footer {
     margin-bottom: 0;
     padding-bottom: 0;
 }
-picture {/*This is for the Portfolio*/
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-
-}
 #gallery {/*This is for the Portfolio*/
     display: flex;
     flex-direction: row;
@@ -185,12 +179,15 @@ picture {/*This is for the Portfolio*/
     padding-right: 0px;
     background: url(bkgrnd.jpg) repeat-y left top, url(bkgrnd.jpg) repeat-y right top;
 }
-
-#gallery img {/*This is for the Portfolio*/
-    margin: 0px;
-    box-shadow:5px 5px 5px #777;
+#gallery figure {
+  text-align: center;   /* centers inline content like img and text */
 }
-figcaption {/*This is for the Portfolio*/
+#gallery figure img {/*This is for the Portfolio*/
+    margin: 0 auto;
+    box-shadow:5px 5px 5px #777;
+    display: block;
+}
+#gallery figure figcaption {/*This is for the Portfolio*/
     color: Black;
     font-weight: bold;
     text-align: center;
