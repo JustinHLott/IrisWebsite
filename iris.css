@@ -31,12 +31,12 @@ nav {
     padding-bottom: 6px;
     border-bottom: 2px solid black;
     text-indent: 1em;
-    font-size: inherit;
+    font-size: 30px;
 }
 nav a {
     text-decoration: none; /*This makes no underlines on nav hyperlinks*/
     transition:color 4s linear;
-    font-size: inherit;
+    font-size: 30px;
 }
 a:hover {
     color: #13bcd3;
