@@ -89,6 +89,7 @@ footer {
     font-size: .75em;
     font-style: italic;
     background-color: rgb(241, 242, 244);
+    padding-right: 30%;
 }
 .centered {
     text-align: center;
@@ -104,6 +105,13 @@ footer {
     width: 25%;
     margin-right: 20px;
     padding-left: 20px;
+}
+#side-bar-bottom {/*for the Index page*/
+    background-color: rgb(241, 242, 244);
+    float: right;
+    width: 25%;
+    margin-right: 35px;
+    padding-left: 9px;
 }
 #main-area {/*for the Index page*/
     margin-left: 20px;
