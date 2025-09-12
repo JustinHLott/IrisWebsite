@@ -53,6 +53,14 @@ nav a {
     margin-left: 0px;
     margin-right: 0px;
   }
+  #gallery {/*This is for the Portfolio*/
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 1.3em;
+  }
+  #gallery figure figcaption{
+    font-size: 2.3em;
+  }
 }
 a:hover {
     color: #13bcd3;
@@ -173,13 +181,13 @@ picture {/*This is for the Portfolio*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
     background: url(bkgrnd.jpg) repeat-y left top, url(bkgrnd.jpg) repeat-y right top;
 }
 
 #gallery img {/*This is for the Portfolio*/
-    margin: 1em;
+    margin: 0px;
     box-shadow:5px 5px 5px #777;
 }
 figcaption {/*This is for the Portfolio*/
@@ -189,8 +197,8 @@ figcaption {/*This is for the Portfolio*/
     text-shadow: 2px 2px 2px #777;
 }
 #contact {/*This is for the Portfolio*/
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
     background: url(bkgrnd.jpg) repeat-y left, url(bkgrnd.jpg) repeat-y right;
 }
 /*Reservations page*/
