@@ -46,6 +46,10 @@ nav a {
   #side-bar h3, #side-bar h4, #side-bar p{/*for the Index page*/
     font-size: 2em;
   }
+  #side-bar-bottom {
+    font-size: 1.3em;
+    color: rgb(241, 242, 244);
+  }
   .wrapper {
     width: 100%;
     max-width: 3000px;
@@ -89,6 +93,8 @@ footer {
     font-size: .75em;
     font-style: italic;
     background-color: rgb(241, 242, 244);
+}
+#footer-index {
     padding-right: 30%;
 }
 .centered {
@@ -108,6 +114,8 @@ footer {
 }
 #side-bar-bottom {/*for the Index page*/
     background-color: rgb(241, 242, 244);
+    font-size: 1.3em;
+    color: rgb(241, 242, 244);
     float: right;
     width: 25%;
     margin-right: 35px;
