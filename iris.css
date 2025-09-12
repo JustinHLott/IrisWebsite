@@ -31,18 +31,21 @@ nav {
     padding-bottom: 6px;
     border-bottom: 2px solid black;
     text-indent: 1em;
-    font-size: 1em;
+    font-size: 1.3em;
 }
 nav a {
     text-decoration: none; /*This makes no underlines on nav hyperlinks*/
     transition:color 4s linear;
-    font-size: 1em;
+    font-size: 1.3em;
 }
-/* Bigger size for Android/phones (screen ≤ 600px) */
+/* Bigger size for Android/phones (screen ≤ 1080px) */
 @media only screen and (max-width: 1080px) {
   nav a {
-    font-size: 1em;  /* adjust to what looks good */
+    font-size: 1.3em;  /* adjust to what looks good */
   }
+  #side-bar {/*for the Index page*/
+    font-size: 1.3em;
+}
 }
 a:hover {
     color: #13bcd3;
