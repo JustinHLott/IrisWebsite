@@ -43,7 +43,10 @@ nav a {
   nav a {
     font-size: 1.3em;  /* adjust to what looks good */
   }
-  #side-bar {/*for the Index page*/
+  #side-bar p{/*for the Index page*/
+    font-size: 1.3em;
+  }
+  #side-bar h4{/*for the Index page*/
     font-size: 1.3em;
   }
   .wrapper {
@@ -52,14 +55,15 @@ nav a {
     min-width: 450px;
     margin-left: 0px;
     margin-right: 0px;
+    padding: 0;
   }
   #gallery {/*This is for the Portfolio*/
     padding-left: 0px;
     padding-right: 0px;
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   #gallery figure figcaption{
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 }
 a:hover {
@@ -98,7 +102,7 @@ footer {
 #side-bar {/*for the Index page*/
     background-color: rgb(241, 242, 244);
     float: right;
-    width: 240px;
+    width: 25%;
     margin-right: 20px;
     padding-left: 20px;
 }
