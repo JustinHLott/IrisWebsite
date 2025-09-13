@@ -1,5 +1,5 @@
 html {
-  -webkit-text-size-adjust: none;  /* for Chrome/Android/iOS */
+  -webkit-text-size-adjust: none;  /* for Chrome/Android/iOS Keeps text size what you say they are on phones*/
   text-size-adjust: none;          /* standard property */
 }
 .wrapper {
@@ -48,7 +48,7 @@ nav a {
     font-size: 1.3em;  /* adjust to what looks good */
   }
   #side-bar h3, #side-bar h4, #side-bar p{/*for the Index page*/
-    font-size: 2em;
+    font-size: 1.3em;
   }
   #side-bar-bottom {
     font-size: 1.3em;
@@ -67,7 +67,7 @@ nav a {
     padding-right: 0px;
     font-size: 1.5em;
   }
-  #gallery figure figcaption{
+  #gallery figure figcaption{/*This is for the Portfolio*/
     font-size: 1.5em;
   }
 }
