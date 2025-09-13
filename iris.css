@@ -47,13 +47,6 @@ nav a {
   nav a {
     font-size: 1.3em;  /* adjust to what looks good */
   }
-  #side-bar h3, #side-bar h4, #side-bar p{/*for the Index page*/
-    font-size: 1.3em;
-  }
-  #side-bar-bottom {
-    font-size: 1.3em;
-    color: rgb(241, 242, 244);
-  }
   .wrapper {
     width: 100%;
     max-width: 3000px;
@@ -98,9 +91,6 @@ footer {
     font-style: italic;
     background-color: rgb(241, 242, 244);
 }
-#footer-index {
-    padding-right: 30%;
-}
 .centered {
     text-align: center;
 }
@@ -109,29 +99,21 @@ footer {
     font-weight: 600;
     font-style: normal;
 }
-#side-bar {/*for the Index page*/
-    background-color: rgb(241, 242, 244);
-    float: right;
-    width: 25%;
-    margin-right: 20px;
+/*for the About*/
+#about {
+    background: rgb(192, 215, 224);
+    margin-left: 35px;
+    margin-right: 35px;
     padding-left: 20px;
 }
-#side-bar-bottom {/*for the Index page*/
-    background-color: rgb(241, 242, 244);
-    font-size: 1.3em;
-    color: rgb(241, 242, 244);
-    float: right;
-    width: 25%;
-    margin-right: 35px;
-    padding-left: 9px;
-}
-#main-area {/*for the Index page*/
+#main-area {
     margin-left: 20px;
 }
+
 .clear-it {/*for the Index page*/
     clear: right;
 }
-#side-bar img {/*for the Index page*/
+#about img {/*for the Index page*/
     filter: grayscale(100%);/*makes images black and white*/
 }
 /*for the Index page*/
