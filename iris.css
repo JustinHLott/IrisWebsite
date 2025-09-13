@@ -122,28 +122,59 @@ footer {
     filter: grayscale(100%);/*makes images black and white*/
 }
 /*for the Index page*/
-@media (max-width: 750px) {
+@media (max-width: 300px) {
     #img1 {
-        display: none;
+        display: inline-flex;
     }
     #img2 {
         display: none;
     }
     #img3 {
         display: none;
+    }
+}
+@media (max-width: 500px) {
+    #img1 {
+        display: inline-flex;
+    }
+    #img2 {
+        display: inline-flex;
+    }
+    #img3 {
+        display: none;
+    }
+}
+@media (max-width: 750px) {
+    #img1 {
+        display: inline-flex;
+    }
+    #img2 {
+        display: inline-flex;
+    }
+    #img3 {
+        display: inline-flex;
     }
 }
 @media (max-width: 1000px) {
+    #img1 {
+        display: inline-flex;
+    }
     #img2 {
-        display: none;
+        display: inline-flex;
     }
     #img3 {
-        display: none;
+        display: inline-flex;
     }
 }
 @media (max-width: 1250px) {
+    #img1 {
+        display: inline-flex;
+    }
+    #img2 {
+        display: inline-flex;
+    }
     #img3 {
-        display: none;
+        display: inline-flex;
     }
 }
 @media (max-width: 2000px) {
