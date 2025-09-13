@@ -114,7 +114,9 @@ footer {
 #main-area {
     margin-left: 20px;
 }
-
+#main-area p{
+    margin-right: 35px;
+}
 .clear-it {/*for the Index page*/
     clear: right;
 }
@@ -122,7 +124,7 @@ footer {
     filter: grayscale(100%);/*makes images black and white*/
 }
 /*for the Index page*/
-@media (max-width: 300px) {
+@media (max-width: 250px) {
     #img1 {
         display: none;
     }
@@ -133,49 +135,28 @@ footer {
         display: none;
     }
 }
-@media (max-width: 500px) {
-    #img1 {
-        display: inline-flex;
-    }
+@media (max-width: 450px) {
     #img2 {
         display: none;
     }
     #img3 {
         display: none;
+    }
+    figure img{
+        width: 300px;
+        height: auto;
     }
 }
 @media (max-width: 750px) {
-    #img1 {
-        display: inline-flex;
-    }
-    #img2 {
-        display: inline-flex;
-    }
     #img3 {
         display: none;
     }
 }
 @media (max-width: 1000px) {
-    #img1 {
-        display: inline-flex;
-    }
-    #img2 {
-        display: inline-flex;
-    }
-    #img3 {
-        display: inline-flex;
-    }
+
 }
 @media (max-width: 1250px) {
-    #img1 {
-        display: inline-flex;
-    }
-    #img2 {
-        display: inline-flex;
-    }
-    #img3 {
-        display: inline-flex;
-    }
+
 }
 @media (max-width: 2000px) {
     /*#img3 {
@@ -194,6 +175,8 @@ footer {
     text-align: left;
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: 0;
+    padding-top: 0;
 }
 #gallery2 {/*This is for Pricing*/
     display: flex;
@@ -202,9 +185,11 @@ footer {
     text-align: left;
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: 0;
+    padding-top: 0;
     background: url(bkgrnd.jpg) repeat-y left top, url(bkgrnd.jpg) repeat-y right top;
 }
-.thumb {
+.thumb {/*This is for Pricing*/
     text-align: center;
     margin-top: 0;
     padding-top: 0;
@@ -220,7 +205,7 @@ footer {
     padding-right: 0px;
     background: url(bkgrnd.jpg) repeat-y left top, url(bkgrnd.jpg) repeat-y right top;
 }
-#gallery figure {
+#gallery figure {/*This is for the Portfolio*/
   text-align: center;   /* centers inline content like img and text */
 }
 #gallery figure img {/*This is for the Portfolio*/
@@ -255,18 +240,20 @@ input[type="submit"] {
     margin-left: 165px;
 }
 /*pricing page*/
-/*#main-pricing {
-    margin: 1em;
-}*/
+#main-pricing {
+    margin-top: 0;
+    padding-top: 0;
+}
 table {
     border: 2px solid rgb(69,71,56);
     border-collapse: collapse;
-    width: 75%;
+    width: 100%;
     margin: auto;
     background-color: rgb(241, 242, 244);
+    font-size: .5em;
 }
 td, th {
-    padding: .5em;
+    padding: .25em;
     border: 2px solid rgb(69,71,56);
 }
 th {
