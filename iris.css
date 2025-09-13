@@ -34,18 +34,18 @@ nav {
     padding-top: 1em;
     padding-bottom: 6px;
     border-bottom: 2px solid black;
-    text-indent: 1em;
-    font-size: 1.3em;
+    padding-left: 1em;
+    font-size: 1em;
 }
 nav a {
     text-decoration: none; /*This makes no underlines on nav hyperlinks*/
     transition:color 4s linear;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 /* Bigger size for Android/phones (screen ≤ 1080px) */
 @media only screen and (max-width: 1080px) {
   nav a {
-    font-size: 1.3em;  /* adjust to what looks good */
+    font-size: 1em;  /* adjust to what looks good */
   }
   .wrapper {
     width: 100%;
@@ -55,13 +55,18 @@ nav a {
     margin-right: 0px;
     padding: 0;
   }
+  #gallery2 {/*This is for the Portfolio*/
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 1.3em;
+  }
   #gallery {/*This is for the Portfolio*/
     padding-left: 0px;
     padding-right: 0px;
-    font-size: 1.5em;
+    font-size: 1em;
   }
   #gallery figure figcaption{/*This is for the Portfolio*/
-    font-size: 1.5em;
+    font-size: 1em;
   }
 }
 a:hover {
