@@ -83,9 +83,8 @@ footer {
 /*for the About*/
 #about {
     background: rgb(192, 215, 224);
-    margin-left: 35px;
-    margin-right: 35px;
-    padding-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 #main-area {
     margin-left: 20px;
@@ -149,8 +148,8 @@ footer {
 }
 #pricing-text {
     text-align: left;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-top: 0;
     padding-top: 0;
 }
@@ -159,8 +158,8 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     text-align: left;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
     margin-top: 0;
     padding-top: 0;
     background: url(bkgrnd.jpg) repeat-y left top, url(bkgrnd.jpg) repeat-y right top;
@@ -233,6 +232,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: auto;
+    margin-bottom: 15px;
     background-color: rgb(241, 242, 244);
     font-size: .5em;
 }
@@ -264,9 +264,9 @@ tr:nth-of-type(odd) {
     padding: 0;
   }
   #gallery2 {/*This is for the Pricing*/
-    padding-left: 0px;
-    padding-right: 0px;
-    font-size: 1.3em;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1em;
   }
   #gallery {/*This is for the Portfolio & Pricing*/
     padding-left: 0px;
@@ -278,5 +278,10 @@ tr:nth-of-type(odd) {
   }
   #gallery figure figcaption{/*This is for the Portfolio*/
     font-size: 1em;
+  }
+  #about {
+    background: rgb(192, 215, 224);
+    margin-left: 40px;
+    margin-right: 40px;
   }
 }
