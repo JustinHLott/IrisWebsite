@@ -250,6 +250,26 @@ th {
 tr:nth-of-type(odd) {
     background-color: lightgray;
 }
+
+/*Login page*/
+form {
+    margin-left: 30px;
+    padding-left: 0;
+}
+.fontSize1em {
+font-size: 1em;
+}
+.no-wrap {
+white-space: nowrap; /* prevents wrapping */
+}
+
+label {
+margin-right: 30px;
+}
+
+input text{
+width: 250px; /* control input width */
+}
 /* Bigger size for Android/phones (screen ≤ 1080px) */
 @media only screen and (max-width: 1080px) {
   nav a {
