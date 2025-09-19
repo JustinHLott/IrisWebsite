@@ -64,6 +64,7 @@ export function createUser(){
           document.getElementById("status").textContent = "✅ Logged in as: " + user.email;
           console.log("User created:", user.uid);
           theDiv.style.display = "none"; // hide
+          window.location.href = "comments.html"; // redirect to comments page
         })
         .catch((error) => {
           theUserId = error.message;
@@ -108,6 +109,7 @@ export function logIn(){
       document.getElementById("status").textContent = "✅ Logged in as: " + user.email;
       console.log("User logged in:", user);
       theDiv.style.display = "none"; // hide
+      window.location.href = "comments.html"; // redirect to comments page
     })
     .catch((error) => {
       document.getElementById("status").textContent = "❌ Error: " + error.message;

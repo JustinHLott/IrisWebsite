@@ -74,7 +74,7 @@
                 createdAt: currentDate,
                 updatedAt: currentDate
              })
-            .then(() => getCommentsForPost(postId))
+            .then(() => getCommentsForPost1(postId))
             .catch(err => console.error("❌ Error:", err));
 
         }
@@ -101,7 +101,13 @@
             getCommentsForPost(1)
         }
 
+        async function getCommentsForPost1(postId) {
+            document.getElementById("commentText").value = "";
+            getCommentsForPost(postId);
+        }
         async function getCommentsForPost(postId) {
+            const commentUser = auth.currentUser;
+            const theUid = commentUser.uid;
             const commentsRef = ref(db, 'comments');
             console.log("commentsRef: " + commentsRef)
             const q = query(commentsRef, orderByChild("postId"), equalTo(postId));
@@ -125,10 +131,42 @@
                 comments.forEach((comment) => {
                 const updatedDate = new Date(comment.updatedAt).toLocaleString();
 
-                const line = document.createElement("p");
-                line.textContent = `${comment.text.replace(/&#039;/g,"'")} (updated: ${updatedDate})`;
+                //create the card
+                const divC = document.createElement("div");
+                divC.style="align-content: left; align-items: left; width: 85%; text-align: left; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 10; border-bottom: 2px solid black;";
+                container.appendChild(divC);
 
-                container.appendChild(line);
+                //Add text to the card
+                const line = document.createElement("p");
+                line.textContent = `${comment.text.replace(/&#039;/g,"'").replace(/&quot;/g,'"')} (updated: ${updatedDate})`;
+                line.style="padding-left: 5; margin: 0;";
+                divC.appendChild(line);
+
+                //Add a button to the card
+                if(theUid === comment.userId){
+
+                    // Create Edit button
+                    const editBtn = document.createElement("button");
+                    editBtn.textContent = "Edit";
+                    editBtn.style="font-size: 1em;padding-top: 0;margin-top:0";
+
+                    // Attach event listener for editing this comment
+                    editBtn.addEventListener("click", () => {
+                        const newText = prompt("Edit your comment:", comment.text);
+                        if (newText !== null && newText.trim() !== "") {
+                        const commentRef = ref(db, "comments/" + comment.id);
+                        set(commentRef, {
+                            ...comment,        // keep postId, userId, etc.
+                            text: newText,
+                            updatedAt: Date.now()
+                        })
+                        .then(() => console.log("Comment updated!"))
+                        .catch((err) => console.error("❌ Error updating:", err));
+                        }
+                    });
+
+                    divC.appendChild(editBtn);
+                }
                 });
 
             } else {

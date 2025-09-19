@@ -15,30 +15,35 @@
             <h1 class="platypi-justin theHeader">Our Iris Gardens</h1>
         </header>
         <nav>
-            <a href="index.html">Home</a>&nbsp;
-            <a href="about.html">About</a>&nbsp;
-            <a href="pricing.html">Pricing</a>&nbsp;
-            <a href="portfolio.html">Portfolio</a>
+            <a href="portfolio.html">Back to Portfolio</a>
+            <button id="logOutComments" class="fontSize1em">Logout</button>
         </nav>
         <main>
             <div id="gallery3">
-                <div id="main-area">
+
                     <form action="">
                         <label for="commentText">Enter comment below</label>
-                        <textarea id="commentText" rows="4" cols="50" placeholder="Type your text here..."></textarea>
-                        <button type="button" id="addCommentBtn">Add Comment</button>
-                        <button type="button" id="refreshBtn">Refresh</button>
+                        <textarea id="commentText" rows="4" cols="50" placeholder="Type your text here..." class="fontSize1em" style="width: 85%"></textarea>
+                        <button type="button" id="addCommentBtn" class="fontSize1em">Add Comment</button>
+                        <button type="button" id="refreshBtn" class="fontSize1em">Refresh</button>
                     </form>
 
-                    <p id="status"></p><br>
-                    <p id="theComments"></p><br>
-                </div>
+                    <p id="status" style="text-align: left; margin-bottom: 0; padding-bottom: 0;"></p><br>
+                    <p id="theComments" style="margin:0; padding:0"></p><br>
+
             </div>
         </main>
     </div>
     <script type="module" src="dist/js/firebaseComments.js"></script>
     <script type="module" src="dist/js/firebaseLink.js"></script>
     <script type="module">
+        
+        const logOutBtn = document.getElementById("logOutComments");
+
+        logOutBtn.addEventListener("click", () => {
+            window.location.href = "login.html";
+        });
+    
         /*
         import { auth } from "dist/js/firebaseAuth.js";
         import { db } from "dist/js/firebaseAuth.js";

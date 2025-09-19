@@ -21,7 +21,7 @@ body {
     margin-right: 0;
 }
 header {
-    background-color: rgb(241, 242, 244);
+    background-color: rgb(255, 255, 255); /*rgb(241, 242, 244);*/
     color: rgb(69,71,56);
     background-image: url(irisDrawing.jpg);
     background-repeat: no-repeat;
@@ -31,7 +31,7 @@ header {
 }
 
 nav {
-    background-color: rgb(241, 242, 244);
+    background-color: rgb(255, 255, 255); /*rgb(241, 242, 244);*/
     font-weight: bold;
     padding-top: 1em;
     padding-bottom: 6px;

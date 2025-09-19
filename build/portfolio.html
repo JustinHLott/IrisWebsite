@@ -21,9 +21,8 @@
             <a href="about.html">About</a>&nbsp;
             <a href="pricing.html">Pricing</a>&nbsp;
             <a href="portfolio.html">Portfolio</a>
-            <a href="comments.html">
-                <button class="fontSize1em">Comments</button>
-            </a>
+            <button class="fontSize1em" id="commentsHtml">Comments</button>
+            <button class="fontSize1em" id="logOutPortfolio">Logout</button>
         </nav>
         <main>
             <div id="gallery">
@@ -109,5 +108,27 @@
         </footer>
     </div>
     <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+    <script type="module">
+        import { getAuth } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        import { app } from "./dist/js/firebaseAuth.js"; // your initializeApp(firebaseConfig)
+        
+        const auth = getAuth(app);
+        const commentsBtn = document.getElementById("commentsHtml");
+        const logOutBtn = document.getElementById("logOutPortfolio");
+
+        commentsBtn.addEventListener("click", () => {
+            const user = auth.currentUser;
+            if (user) {
+            // ✅ Logged in → go to comments
+            window.location.href = "comments.html";
+            } else {
+            // ❌ Not logged in → go to login
+            window.location.href = "login.html";
+            }
+        });
+        logOutBtn.addEventListener("click", () => {
+            window.location.href = "login.html";
+        });
+    </script>
 </body>
 </html>
