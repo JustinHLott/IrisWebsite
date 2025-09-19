@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Iris Website: Comments</title>
+    <meta charset="UTF-8"  name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="iris.css?v=5.7">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1 class="platypi-justin theHeader">Our Iris Gardens</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>&nbsp;
+            <a href="about.html">About</a>&nbsp;
+            <a href="pricing.html">Pricing</a>&nbsp;
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+        <main>
+            <div id="gallery3">
+                <div id="main-area">
+                    <form action="">
+                        <label for="commentText">Enter comment below</label>
+                        <textarea id="commentText" rows="4" cols="50" placeholder="Type your text here..."></textarea>
+                        <button type="button" id="addCommentBtn">Add Comment</button>
+                        <button type="button" id="refreshBtn">Refresh</button>
+                    </form>
+
+                    <p id="status"></p><br>
+                    <p id="theComments"></p><br>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="dist/js/firebaseComments.js"></script>
+    <script type="module" src="dist/js/firebaseLink.js"></script>
+    <script type="module">
+        /*
+        import { auth } from "dist/js/firebaseAuth.js";
+        import { db } from "dist/js/firebaseAuth.js";
+    
+        import { getDatabase, ref, push, set, serverTimestamp
+            , update
+            , query, orderByChild, equalTo, get
+            , getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+
+        document.getElementById("status").textContent = "User Id: ";    
+
+
+        // Runs whenever user signs in or out
+        onAuthStateChanged(auth, (user) => {
+        if (user) {
+            console.log("User is logged in:", user.email);
+            console.log("User UID:", user.uid);
+
+            // Save UID in a global variable or use directly
+            window.currentUserId = user.uid;
+        } else {
+            console.log("No user is logged in");
+        }
+        });
+        //document.getElementById("status").textContent = "User Id: "+window.currentUserId;  
+        
+        
+//Adding comments
+        function addComment1(){
+            var commentTextV = sanitizeInput(document.getElementById("commentText").value);
+            var postId = 1;
+            addComment(postId, window.currentUserId,commentTextV);
+        }
+        function addComment(postId, userId, text) {
+            const commentsRef = ref(db, 'comments');
+            const newCommentRef = push(commentsRef); // generates a unique ID
+
+            set(newCommentRef, {
+                postId: postId,
+                userId: userId,
+                text: text,
+                createdAt: Date.now(),
+                updatedAt: Date.now()
+            })
+            .then(() => console.log("Comment added!"))
+            .catch((error) => console.error("Error adding comment:", error));
+        }
+
+//Edit comments
+        function editComment(commentId, newText) {
+            const commentRef = ref(db, 'comments/' + commentId);
+
+            update(commentRef, {
+                text: newText,
+                updatedAt: Date.now()
+            })
+            .then(() => console.log("Comment updated!"))
+            .catch((error) => console.error("Error updating comment:", error));
+            }
+//Get comments
+        async function getCommentsForPost(postId) {
+            const commentsRef = ref(db, 'comments');
+            const q = query(commentsRef, orderByChild("postId"), equalTo(postId));
+
+            const snapshot = await get(q);
+            if (snapshot.exists()) {
+                snapshot.forEach((child) => {
+                console.log(child.key, child.val());
+                document.getElementById("theComments").textContent = (child.key, child.val());
+                });
+            } else {
+                console.log("No comments found");
+                document.getElementById("theComments").textContent = "No comments found";
+            }
+            }      
+            */  
+    </script>
+
+</body>
+</html>

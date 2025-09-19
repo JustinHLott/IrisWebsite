@@ -269,6 +269,10 @@ margin-right: 30px;
 
 input text{
 width: 250px; /* control input width */
+font-size: 1em;  /* adjust to what looks good */
+}
+#commentText{
+    width: 80%;
 }
 /* Bigger size for Android/phones (screen ≤ 1080px) */
 @media only screen and (max-width: 1080px) {
