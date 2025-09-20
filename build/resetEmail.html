@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { max-width: 400px; margin: auto; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 20px; }
+        .message { margin-top: 10px; color: green; }
+        .error { margin-top: 10px; color: red; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Enter your email to reset Your password</h2>
+    <input type="text" id="emailInput" placeholder="Enter email" />
+    <button id="resetEmailBtn">SendEmail</button>
+    <p class="message" id="message"></p>
+    <p class="error" id="error"></p>
+</div>
+
+<script type="module">
+    import { sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    // Your Firebase config
+    import { auth } from "./dist/js/firebaseAuth.js";
+
+    const resetBtn = document.getElementById("resetEmailBtn");
+
+    resetBtn.addEventListener("click", () => {
+        const email = document.getElementById("emailInput").value;
+
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+            alert("✅ Password reset email sent! Check your inbox.");
+            })
+            .catch((error) => {
+            alert("❌ Error sending reset email:", error.message);
+            });
+    });
+</script>

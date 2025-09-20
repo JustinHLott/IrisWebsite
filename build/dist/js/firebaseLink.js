@@ -2,32 +2,8 @@ import { auth } from "./firebaseAuth.js";
 // Import Firebase from CDN
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 //import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, sendPasswordResetEmail, confirmPasswordReset } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
     
-/*
-import { getDatabase, ref, push, set, serverTimestamp
-        , update
-        , query, orderByChild, equalTo, get
-          } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
-// to deploy this website to firebase ensure all updates are reflected in the "build" folder then in the Terminal (powerbash) type "firebase deploy --only hosting"
-
-// Your Firebase config (from Firebase Console)
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAlKnngYNeJH60pIMwPIFs5OVOE4fwyaJ8",
-  authDomain: "iriswebsite-3316d.firebaseapp.com",
-  databaseURL: "https://iriswebsite-3316d-default-rtdb.firebaseio.com",
-  projectId: "iriswebsite-3316d",
-  storageBucket: "iriswebsite-3316d.firebasestorage.app",
-  messagingSenderId: "616812338141",
-  appId: "1:616812338141:web:988c650f8dd6d430413434",
-  measurementId: "G-0R7Z8FL5LD"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-var auth = getAuth(app);
-*/
 
 var theUser;
 var userId;
@@ -45,23 +21,23 @@ export function sanitizeInput(input) {
 
 // Example: Create a new user
 export function createUser(){
-  var email = sanitizeInput(document.getElementById("emailAddress").value);
+  var email = sanitizeInput(document.getElementById("emailAddress").value.trim().toLowerCase());
   var password = sanitizeInput(document.getElementById("userPassword").value);
-  var emailC = sanitizeInput(document.getElementById("emailAddressCreate").value);
+  var emailC = sanitizeInput(document.getElementById("emailAddressCreate").value.trim().toLowerCase());
   var passwordC = sanitizeInput(document.getElementById("userPasswordCreate").value);
   var passwordC2 = sanitizeInput(document.getElementById("userPasswordCreate2").value);
   const theDiv = document.getElementById("divLogInOrCreate");
   
 
   try{
-    if(emailC.trim() !="" && passwordC.trim() !="" && passwordC2.trim() !="" && passwordC === passwordC2){
+    if(emailC !="" && passwordC.trim() !="" && passwordC2.trim() !="" && passwordC === passwordC2){
       createUserWithEmailAndPassword(auth, emailC, passwordC)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
           theUser = user;
           theUserId = user.uid;
-          document.getElementById("status").textContent = "✅ Logged in as: " + user.email;
+          document.getElementById("status").textContent = "✅ Logged in as: " + user.emailC;
           console.log("User created:", user.uid);
           theDiv.style.display = "none"; // hide
           window.location.href = "comments.html"; // redirect to comments page
@@ -96,7 +72,7 @@ export function createUser(){
 
 // Login user
 export function logIn(){
-  var email = document.getElementById("emailAddress").value;
+  var email = document.getElementById("emailAddress").value.trim().toLowerCase();
   var password = document.getElementById("userPassword").value;
   const theDiv = document.getElementById("divLogInOrCreate");
 
@@ -191,8 +167,37 @@ export function logOut() {
     
   };
 
+  //send reset password email
+  function resetPassword() {
+    const email = document.getElementById("emailInput").value;
 
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert("✅ Password reset email sent! Check your inbox.");
+      })
+      .catch((error) => {
+        console.error("❌ Error sending reset email:", error.message);
+      });
+  }
 
+  // Parse the `oobCode` from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const oobCode = urlParams.get("oobCode");
+
+  // Example: when user submits a new password
+  function updatePassword() {
+    const newPassword = document.getElementById("newPasswordInput").value;
+
+    confirmPasswordReset(auth, oobCode, newPassword)
+      .then(() => {
+        alert("✅ Password has been reset successfully!");
+        // Redirect user to login page
+        window.location.href = "/login.html";
+      })
+      .catch((error) => {
+        console.error("❌ Error resetting password:", error.message);
+      });
+  }
 
 // Bind to button in JS
 const btn1 = document.getElementById("chooseNewUser");
@@ -214,6 +219,12 @@ const btn4 = document.getElementById("logoutBtn")
 if (btn4){
   btn4.addEventListener("click", () => {
   logOut();
+});}
+const btn5 = document.getElementById("resetBtn")
+if (btn5){
+  btn5.addEventListener("click", () => {
+  // Redirect user to reset page
+        window.location.href = "resetEmail.html";
 });}
 
 

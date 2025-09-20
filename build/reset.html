@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { max-width: 400px; margin: auto; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 20px; }
+        .message { margin-top: 10px; color: green; }
+        .error { margin-top: 10px; color: red; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Reset Your Password</h2>
+    <input type="password" id="newPasswordInput" placeholder="Enter new password" />
+    <button id="resetBtn">Reset Password</button>
+    <p class="message" id="message"></p>
+    <p class="error" id="error"></p>
+</div>
+
+<script type="module">
+    import { confirmPasswordReset } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+    // Your Firebase config
+    import { auth } from "./dist/js/firebaseAuth.js";
+
+    // Parse the reset code from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const oobCode = urlParams.get("oobCode"); // Firebase sends this in the email link
+
+    const resetBtn = document.getElementById("resetBtn");
+    const newPasswordInput = document.getElementById("newPasswordInput");
+    const messageEl = document.getElementById("message");
+    const errorEl = document.getElementById("error");
+
+    resetBtn.addEventListener("click", () => {
+        const newPassword = newPasswordInput.value.trim();
+
+        if (!newPassword) {
+            errorEl.textContent = "Please enter a new password.";
+            return;
+        }
+
+        confirmPasswordReset(auth, oobCode, newPassword)
+            .then(() => {
+                messageEl.textContent = "✅ Password has been reset successfully!";
+                errorEl.textContent = "";
+                // Optional: redirect to login page
+                setTimeout(() => {
+                    window.location.href = "/login.html";
+                }, 2000);
+            })
+            .catch((error) => {
+                errorEl.textContent = "❌ Error resetting password: " + error.message;
+                messageEl.textContent = "";
+                console.error("Error:", error);
+            });
+    });
+</script>
+</body>
+</html>
