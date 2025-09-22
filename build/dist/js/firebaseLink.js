@@ -146,6 +146,39 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("togglePassword")) {
+    togglePass("userPasswordCreate", "togglePassword");
+  }
+
+  if (document.getElementById("togglePassword2")) {
+    togglePass("userPasswordCreate2", "togglePassword2");
+  }
+
+  if (document.getElementById("togglePasswordLogin")) {
+    togglePass("userPassword", "togglePasswordLogin");
+  }
+//reset
+  if (document.getElementById("togglePasswordReset")) {
+    togglePass("newPasswordInput", "togglePasswordReset");
+  }
+});
+function togglePass(txt, btn) {
+  const button = document.getElementById(btn);
+  const pwd = document.getElementById(txt);
+
+  console.log("Looking for:", { txt, btn, button, pwd });
+
+  if (button && pwd) {
+    button.addEventListener("click", () => {
+      pwd.type = pwd.type === "password" ? "text" : "password";
+    });
+  } else {
+    console.warn("❌ Missing element:", { txt, btn });
+  }
+}
+
+
 // Logout button action
 export function logOut() {
   const theDiv = document.getElementById("divLogInOrCreate");
@@ -220,12 +253,7 @@ if (btn4){
   btn4.addEventListener("click", () => {
   logOut();
 });}
-const btn5 = document.getElementById("resetBtn")
-if (btn5){
-  btn5.addEventListener("click", () => {
-  // Redirect user to reset page
-        window.location.href = "resetEmail.html";
-});}
+
 
 
 

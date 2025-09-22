@@ -90,6 +90,7 @@
 
             const container = document.getElementById("theComments");
 
+            //The onValue code makes the website update realtime on other people's phones when you make an update.
             onValue(q, (snapshot) => {
                 // clear out old comments
                 container.innerHTML = "";
@@ -132,6 +133,10 @@
                             const textarea = document.getElementById("editTextarea");
                             const saveBtn = document.getElementById("saveEditBtn");
                             const cancelBtn = document.getElementById("cancelEditBtn");
+                            
+                            textarea.classList="fontSize1em"
+                            saveBtn.classList="fontSize1em"
+                            cancelBtn.classList="fontSize1em"
 
                             // Pre-fill textarea with the comment text
                             textarea.value = comment.text;
