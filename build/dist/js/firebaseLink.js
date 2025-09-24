@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 //reset
   if (document.getElementById("togglePasswordReset")) {
-    togglePass("newPasswordInput", "togglePasswordReset");
+    togglePass("inputPasswordReset", "togglePasswordReset");
   }
 });
 function togglePass(txt, btn) {

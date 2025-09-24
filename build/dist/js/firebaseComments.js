@@ -45,7 +45,8 @@
                     if (user) {
                         console.log("✅ Logged in as:", user.uid);
                         // Now safe to call
-                        addComment(postId, user.uid, commentTextV, currentDate);
+                        addComment(postId, user.uid, commentTextV, user.email, currentDate);
+                        document.getElementById("commentText").value = "";
                     } else {
                         console.log("❌ No user logged in");
                         // Maybe redirect to login.html here
@@ -54,13 +55,14 @@
             }
             
         }
-        function addComment(postId, userId, text, currentDate) {
+        function addComment(postId, userId, text, email, currentDate) {
             const commentsRef = ref(db, 'comments');
             const newCommentRef = push(commentsRef); // generates a unique ID
             set(newCommentRef, { 
                 postId: postId,
                 userId: userId,
                 text: text,
+                email: email,
                 createdAt: currentDate,
                 updatedAt: currentDate
              })
@@ -102,11 +104,11 @@
                     });
 
                     // Sort by updatedAt descending (latest first)
-                    commentsArray.sort((a, b) => b.updatedAt - a.updatedAt);
+                    commentsArray.sort((a, b) => b.createdAt - a.createdAt);
 
                     // Render each comment
                     commentsArray.forEach((comment) => {
-                    const updatedDate = new Date(comment.updatedAt).toLocaleString();
+                    const createdDate = new Date(comment.createdAt).toLocaleString();
 
                     //create the card
                     const divC = document.createElement("div");
@@ -115,7 +117,7 @@
 
                     //Add text to the card
                     const line = document.createElement("p");
-                    line.textContent = `${comment.text.replace(/&#039;/g,"'").replace(/&quot;/g,'"')} (updated: ${updatedDate})`;
+                    line.textContent = `${comment.text.replace(/&#039;/g,"'").replace(/&quot;/g,'"')} (updated: ${createdDate}) ${comment.email}`;
                     line.style="padding-left: 5; margin: 0;";
                     divC.appendChild(line);
 
