@@ -114,11 +114,11 @@ async function getCommentsForPost(postId) {
             });
 
             // Sort by updatedAt descending (latest first)
-            commentsArray.sort((a, b) => b.createdAt - a.createdAt);
+            commentsArray.sort((a, b) => b.updatedAt - a.updatedAt);
 
             // Render each comment
             commentsArray.forEach((comment) => {
-                const createdDate = new Date(comment.createdAt).toLocaleString();
+                const updatedDate = new Date(comment.updatedAt).toLocaleString();
 
                 //create the card
                 const divC = document.createElement("div");
@@ -127,7 +127,7 @@ async function getCommentsForPost(postId) {
 
                 //Add text to the card
                 const line = document.createElement("p");
-                line.textContent = `${unsanitizeInput(comment.text)} (Added: ${createdDate}) ${comment.email}`;
+                line.textContent = `${unsanitizeInput(comment.text)} (Added: ${updatedDate}) ${comment.email}`;
                 line.style = "padding-left: 5; margin: 0;";
                 divC.appendChild(line);
 
