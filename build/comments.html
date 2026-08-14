@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Iris Website: Comments</title>
-    <meta charset="UTF-8"  name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="iris.css?v=5.7">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
     </style>
 </head>
+
 <body>
     <div class="wrapper">
         <header>
@@ -21,20 +23,21 @@
         <main>
             <div id="gallery3">
 
-                    <form action="">
-                        <label for="commentText">Enter comment below</label>
-                        <textarea id="commentText" rows="4" cols="50" placeholder="Type your text here..." class="fontSize1em" style="width: 85%"></textarea>
-                        <button type="button" id="addCommentBtn" class="fontSize1em">Add Comment</button>
-                    </form>
+                <form action="">
+                    <label for="commentText">Enter comment below</label>
+                    <textarea id="commentText" rows="4" cols="50" placeholder="Type your text here..."
+                        class="fontSize1em" style="width: 85%"></textarea>
+                    <button type="button" id="addCommentBtn" class="fontSize1em">Add Comment</button>
+                </form>
 
-                    <p id="status" style="text-align: left; margin-bottom: 0; padding-bottom: 0;"></p><br>
-                    <p id="theComments" style="margin:0; padding:0"></p><br>
+                <p id="status" style="text-align: left; margin-bottom: 0; padding-bottom: 0;"></p><br>
+                <p id="theComments" style="margin:0; padding:0"></p><br>
 
             </div>
             <div id="editModal" class="modal">
                 <div class="modal-content">
                     <h2>Edit Comment</h2>
-                    <textarea id="editTextarea" class="textareaSize"></textarea>
+                    <textarea id="editTextarea" class="textareaSize" style="width: 90%; height: 80px;"></textarea>
                     <br>
                     <button id="saveEditBtn">Save</button>
                     <button id="cancelEditBtn">Cancel</button>
@@ -45,7 +48,7 @@
     <script type="module" src="dist/js/firebaseComments.js"></script>
     <script type="module" src="dist/js/firebaseLink.js"></script>
     <script type="module">
-        
+
         const logOutBtn = document.getElementById("logOutComments");
 
         logOutBtn.addEventListener("click", () => {
@@ -53,4 +56,5 @@
         });
     </script>
 </body>
+
 </html>
